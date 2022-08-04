@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'ian_cms.apps.content',
     'rest_framework',
     'ian_account',
+    'crispy_forms',
 ]
 
 AUTH_USER_MODEL = "ian_account.User"
