@@ -27,12 +27,17 @@
         > grant all on database ian_cms to ian;
 
 
-4. Rename `example.env` to `.env` and populate the values appropriately.
+4. Rename `env.template` to `.env` and populate the values appropriately.
+
+        mv example.env .env
+
+
+5. Rename `Pipfile.template` to `Pipfile` and populate the values appropriately.
 
         mv example.env .env
         
         
-5. Setup submodules
+6. Setup submodules
 
 This Project relies on the following submodules:
         
@@ -61,7 +66,7 @@ This Project relies on the following submodules:
         
         git checkout feat/ian-cms
 
-6. Run migrations
+7. Run migrations
 
         ./manage.py makemigrations
 
