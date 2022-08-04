@@ -29,12 +29,12 @@
 
 4. Rename `env.template` to `.env` and populate the values appropriately.
 
-        mv example.env .env
+        cp example.env .env
 
 
 5. Rename `Pipfile.template` to `Pipfile` and populate the values appropriately.
 
-        mv example.env .env
+        cp Pipfile.template Pipfile
         
         
 6. Setup submodules
@@ -43,7 +43,7 @@ This Project relies on the following submodules:
         
    `ian_account` - https://github.com/Impact-Africa-Network/ian-account (branch: `feat/ian-cms`)
    
-   `ian_auth`   - https://github.com/Impact-Africa-Network/ian_auth.     (branch: `feat/ian-cms`)
+   `ian_auth`   - https://github.com/Impact-Africa-Network/ian_auth.     (branch: `feat/ian-cms`) (Optional)
 
         
  i. Initialize submodules
