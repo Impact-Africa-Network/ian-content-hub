@@ -21,10 +21,10 @@
           <div class="navbar-nav">
             <a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
           
-            <a class="nav-item nav-link" href="#">Fireside</a>
+            <a class="nav-item nav-link" href="{% url 'content:firesides' %}">Fireside</a>
        
-            <a class="nav-item nav-link" href="#">PTOW</a>
-            <a class="nav-item nav-link" href="#">Articles</a>        
+            <a class="nav-item nav-link" href="{% url 'content:ptow' %}">PTOW</a>
+            <a class="nav-item nav-link" href="{% url 'content:articles' %}">Articles</a>        
             <a href="/register"><button type="button" class="btn btn-primary">Login</button></a>
 
      
