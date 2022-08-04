@@ -1,32 +1,68 @@
+
 # Set up
 
-1. Create and activate virtual environment
 
-   ```bash
-   pipenv --python 3.10
+1. Clone locally
+
+        git clone --recurse-submodules -j8 https://github.com/Impact-Africa-Network/ian-content-hub.git
+
+2. Create and activate virtual environment (Use `pipenv`)
+
+        pipenv --python 3.10
+
+        pipenv shell
+        
+        pipenv install
+
+3. Setup Database and Database User
+
+        psql
+
+        > create database ian_cms;
+
+        > create role ian with password 'ian';
+
+        > alter role ian with login;
+
+        > grant all on database ian_cms to ian;
+
+
+4. Rename `example.env` to `.env` and populate the values appropriately.
+
+        mv example.env .env
+        
+        
+5. Setup submodules
+
+This Project relies on the following submodules:
+        
+   `ian_account` - https://github.com/Impact-Africa-Network/ian-account (branch: `feat/ian-cms`)
    
-   pipenv shell
-   ```
-3. Install django
+   `ian_auth`   - https://github.com/Impact-Africa-Network/ian_auth.     (branch: `feat/ian-cms`)
 
-   ```bash
-   
-   pipenv install django
-   ```
-5. Start project using this template, ensuring to replace `ian_test_proj` with the appropriate project name on the command below:
+        
+ i. Initialize submodules
+ 
+        git submodule init
+        
+ ii. Fetch and update submodules
+ 
+        git submodule update --remote --recursive
+        
+        
+ iii. Check out to the respective branches
+ 
+        cd src/ian_auth
+        
+        git checkout feat/ian-cms
+        
+        
+        cd src/ian_account
+        
+        git checkout feat/ian-cms
 
-    ```bash
-    django-admin startproject --template https://github.com/Impact-Africa-Network/ian-django-template/archive/main.zip ian_test_proj .
-    ```
-4. Rename all the `.template` files by removing the `.template` extensions
+6. Run migrations
 
-5. Copy the contents of `example.env` to `.env`
+        ./manage.py makemigrations
 
-    ```bash
-    
-       cp example.env .env
-     ```
-
-6. Populate the `.env` with real values.
-
-7. Setup your database, and run migrations.
+        ./manage.py migrate
