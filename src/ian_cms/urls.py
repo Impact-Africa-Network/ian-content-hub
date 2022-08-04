@@ -19,6 +19,5 @@ from django.urls import path,include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('ian_cms.apps.content.urls', namespace='content')),
-
-    
+    path('accounts/', include('ian_account.urls', namespace='account')),  
 ]

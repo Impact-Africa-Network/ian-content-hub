@@ -21,6 +21,7 @@ channels = "*"
 gunicorn = "*"
 cryptography = "*"
 django-storages = "*"
+django-crispy-forms = "*"
 
 [dev-packages]
 pyyaml = "*"
