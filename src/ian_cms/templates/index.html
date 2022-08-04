@@ -4,22 +4,51 @@
 {% load static %}
 
 <style>
-    h1{
+    h2{
         color: var(--theme-color);   
     }
+    
 </style>
 
 <main>
+    <section id="hero">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-md-6 m-auto px-3">
+                   
+                    <h1 class="display-4 mb-3"><strong>Welcome to our Content Hub </strong> </h1>
+                    <p class="lead pb-3">Get Access to Fireside Chat Videos, PTOW sessions and articles</p>
+                    <!-- <button type="button" class="btn btn-primary">Get Templates</button> -->
+                    <a href="{% url 'content:firesides' %}" class="mt-auto btn btn-primary btn-main">View</a>
+
+                    
+                </div>
+                <div class="col-md-6">
+                    <img class="img-fluid" src="{% static 'img/heroshot.png' %}">
+                </div>
+            </div>
+        </div>
+     </section> 
+
     <section id="featured-video">
         <div class="container py-5">
-            <h1 class="text-center pb-3">Featured Video </h1>
+            <h2 class="text-center pb-3 font-weight-bold">Featured Video </h2>
 
             <div class="row pt-3">
                 <div class="col-md-6 m-auto px-3">
-                    <img class="img-fluid" src="{% static 'img/video-placeholder.jpg' %}">      
+                    <div class="card mb-4" style="border-radius:15px;background-color:black; ">
+                        <div class="card-body">
+                            <div class="shadow" style="padding:56.25% 0 0 0;position:relative;">
+                                <iframe src= "https://player.vimeo.com/video/536788655"
+                                        style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0"
+                                        allow="autoplay; fullscreen" allowfullscreen>
+                                </iframe>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-6">   
-                    <h2>Summary of video</h2>                
+                <div class="col-md-6 p-5">   
+                    <h3>Summary of video</h3>                
                     <p class="lead pb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
                         molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
                         numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga</p>
@@ -27,19 +56,19 @@
             </div>
         </div>
      </section>
+
      <section id="featured-article">
         <div class="container py-5">
-            <h1 class="text-center pb-3">Featured Article </h1>
+            <h2 class="text-center pb-3 font-weight-bold">Featured Article </h2>
 
             <div class="row pt-3">
                 <div class="col-md-6 m-auto px-3">
                     <img class="img-fluid" src="{% static 'img/video-placeholder.jpg' %}">      
                 </div>
-                <div class="col-md-6">   
-                    <h2>Article summary</h2>                
+                <div class="col-md-6 p-3">   
+                    <h3>Article summary</h3>                
                     <p class="lead pb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
-                        molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
-                        numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga</p>
+                        molestiae quas vel sint commodi repudi</p>
                 </div>
             </div>
         </div>
