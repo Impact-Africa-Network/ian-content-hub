@@ -13,4 +13,5 @@ class ContentCategory(models.Model):
 
 class ContentType(models.Model):
     ContentCategory = models.ForeignKey(on_delete=models.DO_NOTHING)
+    title = models.CharField
     
