@@ -12,6 +12,10 @@ class ContentCategory(models.Model):
 
 
 class ContentType(models.Model):
-    ContentCategory = models.ForeignKey(on_delete=models.DO_NOTHING)
-    title = models.CharField
+    ContentCategory = models.ForeignKey("ContentCategory", on_delete=models.DO_NOTHING)
+    title = models.CharField(max_length=30)
+    description = models.TextField(max_length=500)
+    type = models.CharField(max_length=30)
+    media_url = models.URLField()
+    timestamp = models.DateTimeField(auto_now_add=True)
     
