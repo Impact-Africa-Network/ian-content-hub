@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'storages',
     'rest_framework',
     'ian_account',
-    'content'
+    'ian_cms.apps.content',
 ]
 
 AUTH_USER_MODEL = "ian_account.User"
