@@ -38,8 +38,17 @@ Login
 
     <legend class="border-bottom mb-4"  style="text-align: center;"><h1>Sign in</h1></legend>
         {% csrf_token %}
-        {{form|crispy}}
+        <div class="col-12">
+            <label for="inputAddress" class="form-label">Address</label>
+            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+          </div>
+        <div class="col-12">
+            <label for="inputAddress2" class="form-label">Address 2</label>
+            <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+        </div>
     </fieldset>
+
+  
     <p class="text-muted"> <small>  Don't have an account? Create one <a style="color: #43a047!important;"  href="/register">here</a></small> </p>
     <button type="submit" class="btn">Login</button>
 
