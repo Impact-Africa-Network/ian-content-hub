@@ -42,9 +42,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'storages',
+    'ian_cms.apps.content',
     'rest_framework',
     'ian_account',
-    'content'
 ]
 
 AUTH_USER_MODEL = "ian_account.User"
