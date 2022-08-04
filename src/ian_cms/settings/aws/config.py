@@ -10,13 +10,15 @@ AWS_PRELOAD_METADATA = True
 AWS_QUERYSTRING_AUTH = False
 AWS_AUTO_CREATE_BUCKET = True
 DEFAULT_FILE_STORAGE = 'ian_cms.settings.aws.utils.MediaRootS3BotoStorage'
-STATICFILES_STORAGE = 'ian_cms.settings.aws.utils.StaticRootS3BotoStorage'
+# STATICFILES_STORAGE = 'ian_cms.settings.aws.utils.StaticRootS3BotoStorage'
 AWS_STORAGE_BUCKET_NAME = config('AWS_STORAGE_BUCKET_NAME')
 S3DIRECT_REGION = 'us-east-1'
 S3_URL = f'//{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com/' 
 MEDIA_URL = f'//{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com/media/' 
 MEDIA_ROOT = MEDIA_URL
-STATIC_URL = f'{S3_URL}static/'
+# STATIC_URL = f'{S3_URL}static/'
+STATIC_URL = '/static/'
+
 ADMIN_MEDIA_PREFIX = f'{STATIC_URL}admin/'
 
 two_months = datetime.timedelta(days=61)
