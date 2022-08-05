@@ -26,7 +26,7 @@
        
             <a class="nav-item nav-link" href="{% url 'content:ptow' %}">PTOW</a>
             <a class="nav-item nav-link" href="{% url 'content:articles' %}">Articles</a>        
-            <a href="/register"><button type="button" class="btn btn-danger mr-2">Login</button></a>
+            <a href="{% url 'ian_account:login' %}"><button type="button" class="btn btn-danger mr-2">Login</button></a>
 
             <form class="form-inline">
               <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
