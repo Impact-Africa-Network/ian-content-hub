@@ -45,37 +45,17 @@
             <section class="py-5">
                 <div class="container">
                     <div class="row">
-                      
+                            {% for article in articles %}
                             <div class="col-sm-4" style="color:#000;text-align:center">
                                 <div class="card" style="width: 18rem;">
                                     <div class="card-body">
-                                      <h5 class="card-title">Article title</h5>
-                                      <h6 class="card-subtitle mb-2 text-muted">Summary</h6>
-                                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                      <a href="#" class="card-link">Link</a>
+                                      <h5 class="card-title">{{ article.title }}</h5>
+                                      <p class="card-text">{{ article.description }}</p>
+                                      <a href={{article.media_url}} class="card-link">Link</a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-4" style="color:#000;text-align:center">
-                                <div class="card" style="width: 18rem;">
-                                    <div class="card-body">
-                                      <h5 class="card-title">Article title</h5>
-                                      <h6 class="card-subtitle mb-2 text-muted">Summary</h6>
-                                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                      <a href="#" class="card-link">Link</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-4" style="color:#000;text-align:center">
-                                <div class="card" style="width: 18rem;">
-                                    <div class="card-body">
-                                      <h5 class="card-title">Article title</h5>
-                                      <h6 class="card-subtitle mb-2 text-muted">Summary</h6>
-                                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                      <a href="#" class="card-link">Link</a>
-                                    </div>
-                                </div>
-                            </div>
+                            {% endfor %}
             
                     </div>
                 </div>

@@ -1,5 +1,7 @@
+from unicodedata import category
 from django.shortcuts import render
 from django.views import View
+from . models import ContentCategory, ContentType
 from django.contrib.auth.decorators import login_required
 
 from ian_account.models import User
@@ -10,19 +12,51 @@ from ian_account.models import User
 #     def get(self, request):
 #         return render(request, 'index.html', {})
 
+
 def home(request):
-    return render(request, 'index.html', {})
+    fireside_videos = ContentType.objects.all().filter(ContentCategory_id=1)
+    ptow_videos = ContentType.objects.all().filter(ContentCategory_id=2)
+    articles = ContentType.objects.all().filter(ContentCategory_id=3)
+
+    print(fireside_videos)
+
+    # featured_fireside = fireside_videos.objects.get(content_id=1)
+    # featured_ptow_video = ptow_videos.objects.get(content_id=1)
+    # featured_article = articles.objects.get(content_id=1)
+
+    context = {
+        'fireside_videos': fireside_videos,
+        # 'ptow_videos': ptow_videos,
+        # 'articles': articles
+    }
+    return render(request, "index.html", context)
+
 
 # @login_required
 def firesides(request):
-    return render(request, 'fireside-videos.html', {})
+    fireside_videos = ContentType.objects.all().filter(ContentCategory_id=1)
+    
+    context = {
+        'fireside_videos': fireside_videos,
+    }
+    return render(request, "fireside-videos.html", context)
 
 # @login_required
-def ptow(self, request):
-    return render(request, 'ptow.html', {})
+def ptow(request):
+    ptow_videos = ContentType.objects.all().filter(ContentCategory_id=2)
+
+    context = {
+        'ptow_videos': ptow_videos
+    }
+    return render(request, 'ptow.html', context)
 
 # @login_required
-def articles(self, request):
-    return render(request, 'articles.html', {})        
+def articles(request):
+    articles = ContentType.objects.all().filter(ContentCategory_id=3)
+
+    context = {
+        'articles': articles
+    }
+    return render(request, 'articles.html', context)        
 
         
