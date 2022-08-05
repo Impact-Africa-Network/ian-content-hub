@@ -121,7 +121,11 @@
       {% endblock footer %}     
       -->
 
- 
+    {% comment %} {% if user.is_authenticated %}
+      <p>You are logged in</p>
+    {% else %}
+      <p>Please Log in</p>
+    {% endif %} {% endcomment %}
    
   </body>
 
